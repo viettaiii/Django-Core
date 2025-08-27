@@ -5,15 +5,18 @@
 {% block title %}Book List{% endblock %}
 
 {% block content %}
-<h2>Book List</h2>
+<h2 class="mb-4">Book List</h2>
 <div class="row">
-    <div class="col-md-3">
-        <form method="get" class="bg-light p-3 rounded">
-            {% crispy filter.form %}
-            <button type="submit" class="btn btn-primary">Apply Filters</button>
-        </form>
+    <!-- Filters -->
+    <div class="col-md-12">
+        <div class="card p-3 mb-4">
+            <form method="get" hx-get="/books/" hx-target="#table-container" hx-swap="outerHTML">
+                {% crispy filter.form %}
+            </form>
+        </div>
     </div>
-    <div class="col-md-9">
+    <!-- Table -->
+    <div id="table-container" class="col-md-12">
         {% render_table table %}
     </div>
 </div>
