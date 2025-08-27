@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load django_tables2 %}
+{% load crispy_forms_tags %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+<h2>Book List</h2>
+<div class="row">
+    <div class="col-md-3">
+        <form method="get" class="bg-light p-3 rounded">
+            {% crispy filter.form %}
+            <button type="submit" class="btn btn-primary">Apply Filters</button>
+        </form>
+    </div>
+    <div class="col-md-9">
+        {% render_table table %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron bg-primary text-white rounded p-5 mb-4">
+            <h1 class="display-4">Django Core Table Demo</h1>
+            <p class="lead">
+                A demonstration of the CoreTablePage pattern using django-tables2, django-filter, and Bootstrap 5.
+                This pattern allows you to create powerful data tables with filtering capabilities using minimal code.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="bi bi-people text-primary me-2"></i>Users
+                </h5>
+                <p class="card-text">
+                    Browse and filter user accounts with advanced search capabilities.
+                </p>
+                <a href="{% url 'users:list' %}" class="btn btn-primary">
+                    View Users <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="bi bi-box text-success me-2"></i>Products
+                </h5>
+                <p class="card-text">
+                    Manage your product catalog with category filtering and price ranges.
+                </p>
+                <a href="{% url 'products:list' %}" class="btn btn-success">
+                    View Products <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="bi bi-tags text-warning me-2"></i>Categories
+                </h5>
+                <p class="card-text">
+                    Organize your products by managing categories and their descriptions.
+                </p>
+                <a href="{% url 'products:categories' %}" class="btn btn-warning">
+                    View Categories <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-info-circle me-2"></i>About This Demo
+                </h5>
+            </div>
+            <div class="card-body">
+                <p>
+                    This demo showcases the <strong>CoreTablePage</strong> pattern, which provides:
+                </p>
+                <ul>
+                    <li><strong>Declarative Configuration</strong> - Define tables and filters with simple Python dictionaries</li>
+                    <li><strong>Dynamic Class Generation</strong> - Automatically creates django-tables2 Table and django-filter FilterSet classes</li>
+                    <li><strong>Bootstrap 5 Integration</strong> - Beautiful, responsive UI with crispy-forms</li>
+                    <li><strong>Minimal Boilerplate</strong> - Create complex data tables with just a few lines of code</li>
+                    <li><strong>Extensible Design</strong> - Easy to customize and extend for specific needs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
